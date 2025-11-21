@@ -1,16 +1,10 @@
 <script setup lang="ts">
-import Hero from './components/Hero.vue'
-import About from './components/About.vue'
-import SportsGrid from './components/SportsGrid.vue'
-import Footer from './components/Footer.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
   <div class="app">
-    <Hero />
-    <About />
-    <SportsGrid />
-    <Footer />
+    <RouterView />
   </div>
 </template>
 

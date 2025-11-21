@@ -15,9 +15,9 @@ const navigation = {
     { name: 'Nyheter', href: '#' }
   ],
   legal: [
-    { name: 'Integritetspolicy', href: '#' },
-    { name: 'Stadgar', href: '#' },
-    { name: 'Cookies', href: '#' }
+    { name: 'Integritetspolicy', href: '/integritetspolicy' },
+    { name: 'Stadgar', href: 'https://www.tumbabasket.se/dokument/a165806b-4430-429b-bc89-b2b604a236ac/Fc3b6reningens20stadgar_uppdaterade202025_fc3b6r20beslut.pdf' },
+    { name: 'Cookies', href: '/cookies' }
   ]
 }
 </script>
