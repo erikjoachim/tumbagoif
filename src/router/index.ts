@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw, RouteLocationNormalized } from 'vue-router'
 
-const routes: RouteRecordRaw[] = [
+
+let routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
@@ -17,7 +18,17 @@ const routes: RouteRecordRaw[] = [
     name: 'Cookies',
     component: () => import('../pages/CookiesPolicy.vue')
   }
-]
+];
+
+if (import.meta.env.VITE_UNDER_CONSTRUCTION === 'true') {
+  routes = [
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'UnderConstruction',
+      component: () => import('../pages/UnderConstruction.vue')
+    }
+  ];
+}
 
 const router = createRouter({
   history: createWebHistory(),
