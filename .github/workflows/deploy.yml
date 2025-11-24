@@ -1,0 +1,53 @@
+name: Build & Deploy to Firebase
+
+# ------------------------------------------
+# ❌ Auto-trigger on main is disabled for now
+# Uncomment the block below once you're ready:
+#
+# on:
+#   push:
+#     branches:
+#       - main
+#
+# ------------------------------------------
+
+# ✔ Manual trigger so you can test anytime
+on:
+  workflow_dispatch:
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # --- Checkout Code ---
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # --- Setup Node.js ---
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # --- Install Dependencies ---
+      - name: Install dependencies
+        run: npm install
+
+      # --- Type Checking ---
+      - name: Type check
+        run: npm run type-check || npm run build --if-present
+        shell: bash
+
+      # --- Build Project ---
+      - name: Build Vite project
+        run: npm run build
+
+      # --- Deploy to Firebase Hosting ---
+      - name: Deploy to Firebase Hosting
+        uses: w9jds/firebase-action@v13.4.0
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
