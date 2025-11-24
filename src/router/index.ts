@@ -17,6 +17,11 @@ let routes: RouteRecordRaw[] = [
     path: '/cookies',
     name: 'Cookies',
     component: () => import('../pages/CookiesPolicy.vue')
+  },
+  {
+    path: '/under-konstruktion',
+    name: 'UnderConstruction',
+    component: () => import('../pages/UnderConstruction.vue')
   }
 ];
 

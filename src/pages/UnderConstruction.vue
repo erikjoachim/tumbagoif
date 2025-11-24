@@ -15,7 +15,7 @@
         </p>
         <div class="hero-cta">
           <a v-for="sport in sports" :key="sport.name" :href="sport.link" class="btn btn-primary" target="_blank" rel="noopener">
-            <img :src="sport.image" :alt="sport.name" class="card-img" />
+            <!--<img :src="sport.image" :alt="sport.name" class="card-img" />-->
             {{ sport.name }}
           </a>
         </div>
@@ -28,22 +28,22 @@
 const sports = [
   {
     name: 'Basket',
-    link: 'https://example.com/basket',
+    link: 'https://tumbabasket.se',
     image: '/src/assets/basket.png',
   },
   {
     name: 'Gymnastik',
-    link: 'https://example.com/gymnastik',
+    link: 'https://tumbagymnastik.se',
     image: '/src/assets/gymnastik.png',
   },
   {
     name: 'Innebandy',
-    link: 'https://example.com/innebandy',
+    link: 'https://www.svenskalag.se/tumbainnebandy',
     image: '/src/assets/innebandy.png',
   },
   {
     name: 'Gymmix',
-    link: 'https://example.com/gymmix',
+    link: 'https://tumbagymmix.se',
     image: '/src/assets/gymmix.png',
   },
 ];
