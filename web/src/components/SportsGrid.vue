@@ -1,34 +1,36 @@
 <script setup lang="ts">
 const sports = [
   {
-    name: 'Gymnastik',
-    description: 'Utveckla styrka, rörlighet och koordination i en trygg miljö.',
-    icon: '🤸',
-    url: '#',
-    size: 'large'
+    name: "Gymnastik",
+    description:
+      "Utveckla styrka, rörlighet och koordination i en trygg miljö.",
+    icon: "🤸",
+    url: "#",
+    size: "large",
   },
   {
-    name: 'Basket',
-    description: 'Träning och matcher för alla åldrar. Från nybörjare till erfarna spelare.',
-    icon: '🏀',
-    url: '#',
-    size: 'medium'
+    name: "Basket",
+    description:
+      "Träning och matcher för alla åldrar. Från nybörjare till erfarna spelare.",
+    icon: "🏀",
+    url: "#",
+    size: "medium",
   },
   {
-    name: 'Innebandy',
-    description: 'Lagsport med tempo och glädje. Lag för alla nivåer.',
-    icon: '🏑',
-    url: '#',
-    size: 'medium'
+    name: "Innebandy",
+    description: "Lagsport med tempo och glädje. Lag för alla nivåer.",
+    icon: "🏑",
+    url: "#",
+    size: "medium",
   },
   {
-    name: 'Gymmix',
-    description: 'Träna tillsammans i grupp med fokus på glädje och hälsa.',
-    icon: '💪',
-    url: '#',
-    size: 'large'
-  }
-]
+    name: "Gymmix",
+    description: "Träna tillsammans i grupp med fokus på glädje och hälsa.",
+    icon: "💪",
+    url: "#",
+    size: "large",
+  },
+];
 </script>
 
 <template>
@@ -39,7 +41,8 @@ const sports = [
           Hitta din <span class="highlight">grej</span>
         </h2>
         <p class="section-description">
-          Utforska våra fyra idrottsgrenar, var och en med egna träningsmöjligheter och sammanhang.
+          Utforska våra fyra idrottsgrenar, var och en med egna
+          träningsmöjligheter och sammanhang.
         </p>
       </div>
 
@@ -57,8 +60,20 @@ const sports = [
               <p class="sport-description">{{ sport.description }}</p>
             </div>
             <div class="card-arrow">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 17L17 7M17 7H7M17 7V17"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </div>
           </div>
@@ -90,7 +105,11 @@ const sports = [
 }
 
 .highlight {
-  background: linear-gradient(135deg, var(--color-red-600) 0%, var(--color-red-400) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-red-600) 0%,
+    var(--color-red-400) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -125,13 +144,17 @@ const sports = [
 }
 
 .sport-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, transparent 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.1) 0%,
+    transparent 100%
+  );
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -216,7 +239,11 @@ const sports = [
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 60%);
+  background: radial-gradient(
+    circle at 80% 20%,
+    rgba(220, 38, 38, 0.05) 0%,
+    transparent 60%
+  );
   transition: transform 0.4s ease;
   pointer-events: none;
 }

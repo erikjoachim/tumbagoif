@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const stats = [
-  { value: '4', label: 'Idrottsgrenar' },
-  { value: '500+', label: 'Medlemmar' },
-  { value: '15+', label: 'År av Gemenskap' },
-  { value: '100+', label: 'Aktiviteter/Vecka' }
-]
+  { value: "4", label: "Idrottsgrenar" },
+  { value: "500+", label: "Medlemmar" },
+  { value: "15+", label: "År av Gemenskap" },
+  { value: "100+", label: "Aktiviteter/Vecka" },
+];
 </script>
 
 <template>
@@ -15,22 +15,18 @@ const stats = [
           En förening för <span class="highlight">alla</span>
         </h2>
         <p class="section-description">
-          Vi är en ideell idrottsförening som samlar människor genom rörelse och gemenskap.
-          Vår paraplyorganisation förenar fyra idrottsgrenar, var och en med egna anläggningar,
-          engagerade ledare och varma sammanhang.
+          Vi är en ideell idrottsförening som samlar människor genom rörelse och
+          gemenskap. Vår paraplyorganisation förenar fyra idrottsgrenar, var och
+          en med egna anläggningar, engagerade ledare och varma sammanhang.
         </p>
         <p class="section-description">
-          Hos oss finns plats för alla – oavsett om du vill tävla, hålla dig i form,
-          eller bara ha kul tillsammans med andra.
+          Hos oss finns plats för alla – oavsett om du vill tävla, hålla dig i
+          form, eller bara ha kul tillsammans med andra.
         </p>
       </div>
 
       <div class="stats-grid">
-        <div
-          v-for="stat in stats"
-          :key="stat.label"
-          class="stat-card"
-        >
+        <div v-for="stat in stats" :key="stat.label" class="stat-card">
           <div class="stat-value">{{ stat.value }}</div>
           <div class="stat-label">{{ stat.label }}</div>
         </div>
@@ -60,7 +56,11 @@ const stats = [
 }
 
 .highlight {
-  background: linear-gradient(135deg, var(--color-red-600) 0%, var(--color-red-400) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-red-600) 0%,
+    var(--color-red-400) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

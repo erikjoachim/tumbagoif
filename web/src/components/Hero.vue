@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <section class="hero">
@@ -13,8 +12,8 @@
           Glädje i <span class="highlight">rörelse</span>
         </h1>
         <p class="hero-description">
-          En idrottsförening för alla, med basket, gymnastik, innebandy och gymmix.
-          Här är du alltid välkommen, oavsett ålder eller nivå.
+          En idrottsförening för alla, med basket, gymnastik, innebandy och
+          gymmix. Här är du alltid välkommen, oavsett ålder eller nivå.
         </p>
         <div class="hero-cta">
           <a href="#sports" class="btn btn-primary">Våra idrotter</a>
@@ -23,9 +22,15 @@
       </div>
       <div class="hero-visual">
         <div class="visual-grid">
-          <div class="grid-item item-1"><p class="hero-description">Potentiell bild 1</p></div>
-          <div class="grid-item item-2"><p class="hero-description">Potentiell bild 2</p></div>
-          <div class="grid-item item-3"><p class="hero-description">Potentiell bild 3</p></div>
+          <div class="grid-item item-1">
+            <p class="hero-description">Potentiell bild 1</p>
+          </div>
+          <div class="grid-item item-2">
+            <p class="hero-description">Potentiell bild 2</p>
+          </div>
+          <div class="grid-item item-3">
+            <p class="hero-description">Potentiell bild 3</p>
+          </div>
         </div>
       </div>
     </div>
@@ -43,13 +48,17 @@
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -20%;
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(220, 38, 38, 0.15) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -90,7 +99,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -106,7 +116,11 @@
 }
 
 .highlight {
-  background: linear-gradient(135deg, var(--color-red-600) 0%, var(--color-red-400) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-red-600) 0%,
+    var(--color-red-400) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -184,7 +198,11 @@
 
 .item-1 {
   grid-row: span 2;
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, transparent 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.1) 0%,
+    transparent 100%
+  );
   p {
     display: flex;
     justify-content: center;
@@ -195,7 +213,11 @@
 }
 
 .item-2 {
-  background: linear-gradient(135deg, transparent 0%, rgba(220, 38, 38, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(220, 38, 38, 0.05) 100%
+  );
   p {
     display: flex;
     justify-content: center;

@@ -1,1 +1,17 @@
-{"root":["./src/main.ts","./src/vite-env.d.ts","./src/router/index.ts","./src/app.vue","./src/components/about.vue","./src/components/footer.vue","./src/components/hero.vue","./src/components/sportsgrid.vue","./src/pages/cookiespolicy.vue","./src/pages/home.vue","./src/pages/privacypolicy.vue","./src/pages/underconstruction.vue"],"version":"5.9.3"}
+{
+  "root": [
+    "./src/main.ts",
+    "./src/vite-env.d.ts",
+    "./src/router/index.ts",
+    "./src/app.vue",
+    "./src/components/about.vue",
+    "./src/components/footer.vue",
+    "./src/components/hero.vue",
+    "./src/components/sportsgrid.vue",
+    "./src/pages/cookiespolicy.vue",
+    "./src/pages/home.vue",
+    "./src/pages/privacypolicy.vue",
+    "./src/pages/underconstruction.vue"
+  ],
+  "version": "5.9.3"
+}
