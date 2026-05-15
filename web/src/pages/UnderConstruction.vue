@@ -1,4 +1,3 @@
-
 <template>
   <section class="hero">
     <div class="hero-container">
@@ -11,10 +10,22 @@
           Sidan är <span class="highlight">under konstruktion</span>
         </h1>
         <p class="hero-description">
-          Vår nya hemsida är snart klar! Under tiden kan du besöka våra idrotter nedan.
+          Vår nya hemsida är snart klar! Under tiden kan du besöka våra idrotter
+          nedan. Behöver du kontakta oss för generella frågor? Skicka ett mail
+          till:
+          <a href="mailto:info@tumbagoif.se" class="contact-link"
+            >info@tumbagoif.se</a
+          >
         </p>
         <div class="hero-cta">
-          <a v-for="sport in sports" :key="sport.name" :href="sport.link" class="btn btn-primary" target="_blank" rel="noopener">
+          <a
+            v-for="sport in sports"
+            :key="sport.name"
+            :href="sport.link"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
             <!--<img :src="sport.image" :alt="sport.name" class="card-img" />-->
             {{ sport.name }}
           </a>
@@ -27,24 +38,24 @@
 <script setup lang="ts">
 const sports = [
   {
-    name: 'Basket',
-    link: 'https://tumbabasket.se',
-    image: '/src/assets/basket.png',
+    name: "Basket",
+    link: "https://tumbabasket.se",
+    image: "/src/assets/basket.png",
   },
   {
-    name: 'Gymnastik',
-    link: 'https://tumbagymnastik.se',
-    image: '/src/assets/gymnastik.png',
+    name: "Gymnastik",
+    link: "https://tumbagymnastik.se",
+    image: "/src/assets/gymnastik.png",
   },
   {
-    name: 'Innebandy',
-    link: 'https://www.svenskalag.se/tumbainnebandy',
-    image: '/src/assets/innebandy.png',
+    name: "Innebandy",
+    link: "https://www.svenskalag.se/tumbainnebandy",
+    image: "/src/assets/innebandy.png",
   },
   {
-    name: 'Gymmix',
-    link: 'https://tumbagymmix.se',
-    image: '/src/assets/gymmix.png',
+    name: "Gymmix",
+    link: "https://tumbagymmix.se",
+    image: "/src/assets/gymmix.png",
   },
 ];
 </script>
@@ -61,13 +72,17 @@ const sports = [
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -20%;
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(220, 38, 38, 0.15) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -108,7 +123,8 @@ const sports = [
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -124,7 +140,11 @@ const sports = [
 }
 
 .highlight {
-  background: linear-gradient(135deg, var(--color-red-600) 0%, var(--color-red-400) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-red-600) 0%,
+    var(--color-red-400) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -209,7 +229,11 @@ const sports = [
 
 .item-1 {
   grid-row: span 2;
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, transparent 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.1) 0%,
+    transparent 100%
+  );
   p {
     display: flex;
     justify-content: center;
@@ -220,7 +244,11 @@ const sports = [
 }
 
 .item-2 {
-  background: linear-gradient(135deg, transparent 0%, rgba(220, 38, 38, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(220, 38, 38, 0.05) 100%
+  );
   p {
     display: flex;
     justify-content: center;
@@ -259,5 +287,14 @@ const sports = [
   .hero {
     padding: calc(var(--spacing-unit) * 6);
   }
+}
+
+.contact-link {
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--color-red-600);
 }
 </style>
