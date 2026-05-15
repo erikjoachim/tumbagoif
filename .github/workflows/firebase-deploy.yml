@@ -15,6 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: cd web && npm run deploy
+        env:
+          VITE_UNDER_CONSTRUCTION: false
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
