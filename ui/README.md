@@ -7,7 +7,7 @@ Multi-framework support via per-framework dirs under `src/`:
 ```
 src/
 ├── vue/       Vue 3 components (current)
-├── react/     React components (future)
+├── react/     React components (future tbd)
 └── styles/    Shared design tokens (framework-agnostic)
 ```
 
@@ -23,21 +23,57 @@ This creates a symlink at `node_modules/@tumbagoif/ui -> ui/`. Any app in the wo
 
 ### Adding a new app to the workspace
 
-Add its directory to the root `package.json` workspaces array:
+1. Create app directory with its own `package.json`:
 
 ```json
-"workspaces": ["ui", "web", "cms"]
-```
-
-The new app needs its own `package.json`. Then you can add `@tumbagoif/ui` as a dependency:
-
-```json
-"dependencies": {
-  "@tumbagoif/ui": "*"
+{
+  "name": "my-app",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build"
+  },
+  "dependencies": {
+    "@tumbagoif/ui": "*",
+    "vue": "^3.5"
+  },
+  "devDependencies": {
+    "vite": "^6",
+    "vue-tsc": "^2"
+  }
 }
 ```
 
-Run `npm install` from root to link everything.
+2. Add directory to root `package.json` workspaces array:
+
+```json
+"workspaces": ["ui", "web", "my-app"]
+```
+
+3. Run `npm install` from root.
+
+### Minimal setup for a new app
+
+After workspace setup, add these two lines to `src/main.ts`:
+
+```ts
+import '@tumbagoif/ui/styles/tokens'  // dark theme + Inter font + CSS reset
+import { TButton, TBadge } from '@tumbagoif/ui'
+```
+
+That's it. The tokens import gives you:
+- Dark background (`#0a0a0a`), light text (`#ffffff`)
+- **Inter** font (auto-loaded from Google Fonts)
+- CSS reset (`box-sizing: border-box`, no margin/padding)
+- All design tokens available as `var(--...)` in your CSS
+
+Then use components anywhere:
+
+```vue
+<template>
+  <TButton variant="primary">Hello</TButton>
+</template>
+```
 
 ## Commands
 
