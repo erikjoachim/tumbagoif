@@ -27,7 +27,7 @@ const stats = [
 
       <div class="stats-grid">
         <div v-for="stat in stats" :key="stat.label" class="stat-card">
-          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-value highlight">{{ stat.value }}</div>
           <div class="stat-label">{{ stat.label }}</div>
         </div>
       </div>
@@ -96,7 +96,7 @@ const stats = [
 .stat-value {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  color: var(--color-red-600);
+  /*color: var(--color-red-600);*/
   margin-bottom: calc(var(--spacing-unit) * 1);
 }
 
