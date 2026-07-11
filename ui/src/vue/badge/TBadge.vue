@@ -23,8 +23,9 @@ withDefaults(defineProps<{
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: 100px;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
 }
 

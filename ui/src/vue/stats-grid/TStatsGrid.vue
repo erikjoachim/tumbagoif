@@ -34,6 +34,7 @@ withDefaults(defineProps<{
 
 .t-stat-card {
   padding: calc(var(--spacing-unit) * 4);
+  font-family: var(--font-family-sans);
   background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: calc(var(--spacing-unit) * 2);
@@ -49,16 +50,19 @@ withDefaults(defineProps<{
 
 .t-stat-card__value {
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  color: var(--color-red-600);
+  font-weight: var(--font-weight-bold);
+  background: var(--gradient-red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: calc(var(--spacing-unit) * 1);
 }
 
 .t-stat-card__label {
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: var(--letter-spacing-wide);
 }
 </style>

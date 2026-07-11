@@ -32,26 +32,26 @@ const classes = computed(() => [
   align-items: center;
   justify-content: center;
   border-radius: calc(var(--spacing-unit) * 1.5);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
-  font-family: inherit;
+  font-family: var(--font-family-sans);
 }
 
 .t-btn--sm {
   padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2.5);
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
 }
 
 .t-btn--md {
   padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
-  font-size: 1rem;
+  font-size: var(--font-size-base);
 }
 
 .t-btn--lg {
   padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 5);
-  font-size: 1.125rem;
+  font-size: var(--font-size-lg);
 }
 
 .t-btn--primary {
