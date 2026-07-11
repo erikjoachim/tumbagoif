@@ -31,6 +31,13 @@ Run from each workspace's own directory, NOT from root.
 | `npm run build-storybook` | Static Storybook site |
 | `npm run typecheck` | `vue-tsc --noEmit` |
 
+### Root (formats both packages)
+
+| Command | Action |
+|---------|--------|
+| `npm run format` | `prettier --write .` (entire monorepo) |
+| `npm run format:check` | `prettier --check .` (CI-safe) |
+
 Root: `npm install` (installs all workspace deps).
 
 ## Code Style Guidelines
@@ -66,6 +73,14 @@ Root: `npm install` (installs all workspace deps).
 | Constants | camelCase | `const defaultTimeout = 5000` |
 | Types/Interfaces | PascalCase | `interface SportsData` |
 
+### Formatting
+
+- Prettier configured via root `.prettierrc`
+- `npm run format` from root — `prettier --write .`
+- `npm run format:check` from root — `prettier --check .` (CI-safe)
+- VSCode: `.vscode/settings.json` — formatOnSave via Prettier extension
+- Zed: `.zed/settings.json` — built-in Prettier support
+
 ### Imports
 
 ```typescript
@@ -90,6 +105,12 @@ import.meta.env.VITE_SOME_VAR
 tumbagoif/
 ├── package.json              npm workspaces: ["ui", "web"]
 ├── package-lock.json         Single lockfile for all workspaces
+├── .prettierrc               Prettier config
+├── .prettierignore           Prettier ignore rules
+├── .vscode/
+│   └── settings.json         VSCode config
+├── .zed/
+│   └── settings.json         Zed Editor config
 ├── node_modules/             Hoisted shared deps
 │   └── @tumbagoif/ui/        Symlink → ../ui/
 ├── ui/                       @tumbagoif/ui component library
@@ -302,4 +323,5 @@ The website is deployed to Azure Static Web Apps.
 | **@tumbagoif/ui not resolving** | Run `npm install` from root. Check root `node_modules/@tumbagoif/ui` is a symlink to `../ui/`. |
 | **Storybook won't start** | Verify `storybook` + framework versions match. Check `.storybook/main.ts` addons are installed. |
 | **Deploy fails** | Check `AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_ISLAND_0EAC90703` secret is set. |
+| **Prettier not formatting** | Verify `.prettierrc` at root, Prettier extension installed (VSCode), file not in `.prettierignore` |
 | **Environment variables** | Prefix with `VITE_` to expose to client. |

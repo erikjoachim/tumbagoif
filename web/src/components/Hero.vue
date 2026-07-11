@@ -8,12 +8,10 @@
           <span class="pulse"></span>
           Tumba Gymnastik och Idrottsförening
         </div>
-        <h1 class="hero-title">
-          Glädje i <span class="highlight">rörelse</span>
-        </h1>
+        <h1 class="hero-title">Glädje i <span class="highlight">rörelse</span></h1>
         <p class="hero-description">
-          En idrottsförening för alla, med basket, gymnastik, innebandy och
-          gymmix. Här är du alltid välkommen, oavsett ålder eller nivå.
+          En idrottsförening för alla, med basket, gymnastik, innebandy och gymmix. Här är du alltid
+          välkommen, oavsett ålder eller nivå.
         </p>
         <div class="hero-cta">
           <a href="#sports" class="btn btn-primary">Våra idrotter</a>
@@ -54,11 +52,7 @@
   right: -20%;
   width: 800px;
   height: 800px;
-  background: radial-gradient(
-    circle,
-    rgba(220, 38, 38, 0.15) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -116,11 +110,7 @@
 }
 
 .highlight {
-  background: linear-gradient(
-    135deg,
-    var(--color-red-600) 0%,
-    var(--color-red-400) 100%
-  );
+  background: linear-gradient(135deg, var(--color-red-600) 0%, var(--color-red-400) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -198,11 +188,7 @@
 
 .item-1 {
   grid-row: span 2;
-  background: linear-gradient(
-    135deg,
-    rgba(220, 38, 38, 0.1) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, transparent 100%);
   p {
     display: flex;
     justify-content: center;
@@ -213,11 +199,7 @@
 }
 
 .item-2 {
-  background: linear-gradient(
-    135deg,
-    transparent 0%,
-    rgba(220, 38, 38, 0.05) 100%
-  );
+  background: linear-gradient(135deg, transparent 0%, rgba(220, 38, 38, 0.05) 100%);
   p {
     display: flex;
     justify-content: center;

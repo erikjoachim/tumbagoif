@@ -1,11 +1,14 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
-  variant?: 'default' | 'interactive'
-  padding?: 'sm' | 'md' | 'lg'
-}>(), {
-  variant: 'default',
-  padding: 'md',
-})
+withDefaults(
+  defineProps<{
+    variant?: "default" | "interactive";
+    padding?: "sm" | "md" | "lg";
+  }>(),
+  {
+    variant: "default",
+    padding: "md",
+  },
+);
 </script>
 
 <template>

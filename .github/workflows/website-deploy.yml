@@ -5,17 +5,17 @@ on:
     branches:
       - main
     paths:
-      - 'web/**'
-      - '!**.md'
-      - '!AGENTS.md'
+      - "web/**"
+      - "!**.md"
+      - "!AGENTS.md"
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
     paths:
-      - 'web/**'
-      - '!**.md'
-      - '!AGENTS.md'
+      - "web/**"
+      - "!**.md"
+      - "!AGENTS.md"
 
 jobs:
   build_and_deploy_job:

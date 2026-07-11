@@ -2,16 +2,14 @@
 const sports = [
   {
     name: "Gymnastik",
-    description:
-      "Utveckla styrka, rörlighet och koordination i en trygg miljö.",
+    description: "Utveckla styrka, rörlighet och koordination i en trygg miljö.",
     icon: "🤸",
     url: "#",
     size: "large",
   },
   {
     name: "Basket",
-    description:
-      "Träning och matcher för alla åldrar. Från nybörjare till erfarna spelare.",
+    description: "Träning och matcher för alla åldrar. Från nybörjare till erfarna spelare.",
     icon: "🏀",
     url: "#",
     size: "medium",
@@ -37,12 +35,9 @@ const sports = [
   <section id="sports" class="sports">
     <div class="sports-container">
       <div class="sports-header">
-        <h2 class="section-title">
-          Hitta din <span class="highlight">grej</span>
-        </h2>
+        <h2 class="section-title">Hitta din <span class="highlight">grej</span></h2>
         <p class="section-description">
-          Utforska våra fyra idrottsgrenar, var och en med egna
-          träningsmöjligheter och sammanhang.
+          Utforska våra fyra idrottsgrenar, var och en med egna träningsmöjligheter och sammanhang.
         </p>
       </div>
 
@@ -105,11 +100,7 @@ const sports = [
 }
 
 .highlight {
-  background: linear-gradient(
-    135deg,
-    var(--color-red-600) 0%,
-    var(--color-red-400) 100%
-  );
+  background: linear-gradient(135deg, var(--color-red-600) 0%, var(--color-red-400) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -150,11 +141,7 @@ const sports = [
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(220, 38, 38, 0.1) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, transparent 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -239,11 +226,7 @@ const sports = [
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-    circle at 80% 20%,
-    rgba(220, 38, 38, 0.05) 0%,
-    transparent 60%
-  );
+  background: radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 60%);
   transition: transform 0.4s ease;
   pointer-events: none;
 }

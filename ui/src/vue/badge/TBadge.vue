@@ -1,10 +1,13 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
-  label?: string
-  variant?: 'default' | 'pulse'
-}>(), {
-  variant: 'default'
-})
+withDefaults(
+  defineProps<{
+    label?: string;
+    variant?: "default" | "pulse";
+  }>(),
+  {
+    variant: "default",
+  },
+);
 </script>
 
 <template>

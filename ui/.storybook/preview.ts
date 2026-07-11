@@ -5,7 +5,7 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       options: {
-        dark: { name: 'Tumba GOIF - BG Dark', value: 'var(--color-bg-primary)' },
+        dark: { name: "Tumba GOIF - BG Dark", value: "var(--color-bg-primary)" },
       },
     },
     controls: {
@@ -16,8 +16,8 @@ const preview: Preview = {
     },
   },
   initialGlobals: {
-      backgrounds: { value: 'dark' },
-    },
+    backgrounds: { value: "dark" },
+  },
 };
 
 export default preview;

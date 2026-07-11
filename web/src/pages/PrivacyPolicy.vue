@@ -12,45 +12,40 @@
         <section class="content-section">
           <h2>Om denna policy</h2>
           <p>
-            Idrottsföreningen respekterar din integritet och är engagerad i att
-            skydda dina personuppgifter. Denna integritetspolicy förklarar hur
-            vi hanterar information på vår webbplats.
+            Idrottsföreningen respekterar din integritet och är engagerad i att skydda dina
+            personuppgifter. Denna integritetspolicy förklarar hur vi hanterar information på vår
+            webbplats.
           </p>
         </section>
 
         <section class="content-section">
           <h2>Webbplatsen samlar ingen data</h2>
           <p>
-            Vår webbplats samlar för närvarande ingen personlig information och
-            använder inga cookies. Du kan besöka och läsa information på vår
-            webbplats helt anonymt.
+            Vår webbplats samlar för närvarande ingen personlig information och använder inga
+            cookies. Du kan besöka och läsa information på vår webbplats helt anonymt.
           </p>
         </section>
 
         <section class="content-section">
           <h2>Medlemssystem</h2>
           <p>
-            Våra olika idrottsgrenar använder externa medlemssystem för
-            hantering av medlemskap, tävlingsanmälningar och administration:
+            Våra olika idrottsgrenar använder externa medlemssystem för hantering av medlemskap,
+            tävlingsanmälningar och administration:
           </p>
           <ul>
             <li>Vissa verksamheter använder Sportadmin</li>
             <li>Andra verksamheter använder Svenskalag</li>
           </ul>
           <p>
-            Dessa system är ansvariga för regelefterlevnad och säker hantering
-            av personuppgifter enligt gällande dataskyddsförordning (GDPR).
-            Information om hur dessa system hanterar dina uppgifter finns i
-            respektive systems integritetspolicy.
+            Dessa system är ansvariga för regelefterlevnad och säker hantering av personuppgifter
+            enligt gällande dataskyddsförordning (GDPR). Information om hur dessa system hanterar
+            dina uppgifter finns i respektive systems integritetspolicy.
           </p>
         </section>
 
         <section class="content-section">
           <h2>Dina rättigheter</h2>
-          <p>
-            När du registrerar dig i något av våra medlemssystem har du enligt
-            GDPR rätt att:
-          </p>
+          <p>När du registrerar dig i något av våra medlemssystem har du enligt GDPR rätt att:</p>
           <ul>
             <li>Få information om vilka personuppgifter vi har om dig</li>
             <li>Få felaktiga uppgifter rättade</li>
@@ -63,15 +58,10 @@
 
         <section class="content-section">
           <h2>Kontakta oss</h2>
-          <p>
-            Om du har frågor om hur vi hanterar personuppgifter, kontakta oss
-            på:
-          </p>
+          <p>Om du har frågor om hur vi hanterar personuppgifter, kontakta oss på:</p>
           <p>
             <strong>E-post:</strong>
-            <a href="mailto:info@idrottsforeningen.se"
-              >info@idrottsforeningen.se</a
-            ><br />
+            <a href="mailto:info@idrottsforeningen.se">info@idrottsforeningen.se</a><br />
             <strong>Telefon:</strong>
             <a href="tel:+46101234567">010-123 45 67</a>
           </p>

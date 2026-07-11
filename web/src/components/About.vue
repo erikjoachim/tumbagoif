@@ -11,17 +11,15 @@ const stats = [
   <section id="about" class="about">
     <div class="about-container">
       <div class="about-content">
-        <h2 class="section-title">
-          En förening för <span class="highlight">alla</span>
-        </h2>
+        <h2 class="section-title">En förening för <span class="highlight">alla</span></h2>
         <p class="section-description">
-          Vi är en ideell idrottsförening som samlar människor genom rörelse och
-          gemenskap. Vår paraplyorganisation förenar fyra idrottsgrenar, var och
-          en med egna anläggningar, engagerade ledare och varma sammanhang.
+          Vi är en ideell idrottsförening som samlar människor genom rörelse och gemenskap. Vår
+          paraplyorganisation förenar fyra idrottsgrenar, var och en med egna anläggningar,
+          engagerade ledare och varma sammanhang.
         </p>
         <p class="section-description">
-          Hos oss finns plats för alla – oavsett om du vill tävla, hålla dig i
-          form, eller bara ha kul tillsammans med andra.
+          Hos oss finns plats för alla – oavsett om du vill tävla, hålla dig i form, eller bara ha
+          kul tillsammans med andra.
         </p>
       </div>
 
@@ -56,11 +54,7 @@ const stats = [
 }
 
 .highlight {
-  background: linear-gradient(
-    135deg,
-    var(--color-red-600) 0%,
-    var(--color-red-400) 100%
-  );
+  background: linear-gradient(135deg, var(--color-red-600) 0%, var(--color-red-400) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

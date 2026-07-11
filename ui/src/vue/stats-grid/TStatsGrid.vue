@@ -1,17 +1,17 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
-  stats: Array<{ value: string; label: string }>
-  columns?: number
-}>(), {
-  columns: 4,
-})
+withDefaults(
+  defineProps<{
+    stats: Array<{ value: string; label: string }>;
+    columns?: number;
+  }>(),
+  {
+    columns: 4,
+  },
+);
 </script>
 
 <template>
-  <div
-    class="t-stats-grid"
-    :style="{ '--t-columns': columns }"
-  >
+  <div class="t-stats-grid" :style="{ '--t-columns': columns }">
     <div v-for="stat in stats" :key="stat.label" class="t-stat-card">
       <div class="t-stat-card__value">{{ stat.value }}</div>
       <div class="t-stat-card__label">{{ stat.label }}</div>

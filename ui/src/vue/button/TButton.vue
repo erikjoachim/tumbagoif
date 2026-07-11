@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { computed } from "vue"
+import { computed } from "vue";
 
-const props = withDefaults(defineProps<{
-  variant?: 'primary' | 'secondary'
-  size?: 'sm' | 'md' | 'lg'
-  href?: string
-}>(), {
-  variant: 'primary',
-  size: 'md',
-})
+const props = withDefaults(
+  defineProps<{
+    variant?: "primary" | "secondary";
+    size?: "sm" | "md" | "lg";
+    href?: string;
+  }>(),
+  {
+    variant: "primary",
+    size: "md",
+  },
+);
 
-const classes = computed(() => [
-  't-btn',
-  `t-btn--${props.variant}`,
-  `t-btn--${props.size}`,
-])
+const classes = computed(() => ["t-btn", `t-btn--${props.variant}`, `t-btn--${props.size}`]);
 </script>
 
 <template>

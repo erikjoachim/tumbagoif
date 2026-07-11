@@ -2,7 +2,8 @@
 
 :root {
   /* Font families */
-  --font-family-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-sans:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Font weights */
   --font-weight-normal: 400;
@@ -38,11 +39,7 @@
   --color-red-400: #f87171;
 
   /* Gradients */
-  --gradient-red: linear-gradient(
-    135deg,
-    var(--color-red-600) 0%,
-    var(--color-red-400) 100%
-  );
+  --gradient-red: linear-gradient(135deg, var(--color-red-600) 0%, var(--color-red-400) 100%);
 
   /* Spacings */
   --spacing-unit: 8px;
@@ -52,7 +49,6 @@
   --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.05em;
-
 
   /* Base theme */
   color: var(--color-text-primary);

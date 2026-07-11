@@ -12,9 +12,9 @@
         <section class="content-section">
           <h2>Vad är cookies?</h2>
           <p>
-            Cookies är små textfiler som lagras på din enhet när du besöker en
-            webbplats. De används för att webbplatsen ska fungera så bra som
-            möjligt och för att ge information till webbplatsens ägare.
+            Cookies är små textfiler som lagras på din enhet när du besöker en webbplats. De används
+            för att webbplatsen ska fungera så bra som möjligt och för att ge information till
+            webbplatsens ägare.
           </p>
         </section>
 
@@ -22,44 +22,35 @@
           <h2>Cookies på denna webbplats</h2>
           <p>
             <strong
-              >Denna webbplats använder för närvarande inga cookies, men kan
-              komma att ändras i framtiden.</strong
+              >Denna webbplats använder för närvarande inga cookies, men kan komma att ändras i
+              framtiden.</strong
             >
           </p>
           <p>
-            Vi samlar inte in någon information om ditt besök via cookies,
-            analytics eller liknande tekniker. Du kan besöka vår webbplats helt
-            anonymt.
+            Vi samlar inte in någon information om ditt besök via cookies, analytics eller liknande
+            tekniker. Du kan besöka vår webbplats helt anonymt.
           </p>
         </section>
 
         <section class="content-section">
           <h2>Medlemssystem</h2>
           <p>
-            När du använder våra externa medlemssystem (Sportadmin och
-            Svenskalag) kan dessa använda cookies för att deras tjänster ska
-            fungera korrekt. Information om deras användning av cookies finns i
-            respektive systems cookie-policy:
+            När du använder våra externa medlemssystem (Sportadmin och Svenskalag) kan dessa använda
+            cookies för att deras tjänster ska fungera korrekt. Information om deras användning av
+            cookies finns i respektive systems cookie-policy:
           </p>
           <ul>
-            <li>
-              <strong>Sportadmin:</strong> Se Sportadmins cookiepolicy på deras
-              webbplats
-            </li>
-            <li>
-              <strong>Svenskalag:</strong> Se Svenskalags cookiepolicy på deras
-              webbplats
-            </li>
+            <li><strong>Sportadmin:</strong> Se Sportadmins cookiepolicy på deras webbplats</li>
+            <li><strong>Svenskalag:</strong> Se Svenskalags cookiepolicy på deras webbplats</li>
           </ul>
         </section>
 
         <section class="content-section">
           <h2>Ändringar i denna policy</h2>
           <p>
-            Om vi i framtiden väljer att använda cookies på vår webbplats kommer
-            vi att uppdatera denna sida med information om vilka cookies vi
-            använder och varför. Vi kommer också att ge dig möjlighet att välja
-            om du vill acceptera cookies eller inte.
+            Om vi i framtiden väljer att använda cookies på vår webbplats kommer vi att uppdatera
+            denna sida med information om vilka cookies vi använder och varför. Vi kommer också att
+            ge dig möjlighet att välja om du vill acceptera cookies eller inte.
           </p>
         </section>
 
@@ -68,9 +59,7 @@
           <p>Om du har frågor om vår cookiepolicy, kontakta oss på:</p>
           <p>
             <strong>E-post:</strong>
-            <a href="mailto:info@idrottsforeningen.se"
-              >info@idrottsforeningen.se</a
-            ><br />
+            <a href="mailto:info@idrottsforeningen.se">info@idrottsforeningen.se</a><br />
             <strong>Telefon:</strong>
             <a href="tel:+46101234567">010-123 45 67</a>
           </p>

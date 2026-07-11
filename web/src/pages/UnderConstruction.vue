@@ -6,16 +6,11 @@
           <span class="pulse"></span>
           Tumba Gymnastik och Idrottsförening
         </div>
-        <h1 class="hero-title">
-          Sidan är <span class="highlight">under konstruktion</span>
-        </h1>
+        <h1 class="hero-title">Sidan är <span class="highlight">under konstruktion</span></h1>
         <p class="hero-description">
-          Vår nya hemsida är snart klar! Under tiden kan du besöka våra idrotter
-          nedan. Behöver du kontakta oss för generella frågor? Skicka ett mail
-          till:
-          <a href="mailto:info@tumbagoif.se" class="contact-link"
-            >info@tumbagoif.se</a
-          >
+          Vår nya hemsida är snart klar! Under tiden kan du besöka våra idrotter nedan. Behöver du
+          kontakta oss för generella frågor? Skicka ett mail till:
+          <a href="mailto:info@tumbagoif.se" class="contact-link">info@tumbagoif.se</a>
         </p>
         <div class="hero-cta">
           <a
@@ -78,11 +73,7 @@ const sports = [
   right: -20%;
   width: 800px;
   height: 800px;
-  background: radial-gradient(
-    circle,
-    rgba(220, 38, 38, 0.15) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -140,11 +131,7 @@ const sports = [
 }
 
 .highlight {
-  background: linear-gradient(
-    135deg,
-    var(--color-red-600) 0%,
-    var(--color-red-400) 100%
-  );
+  background: linear-gradient(135deg, var(--color-red-600) 0%, var(--color-red-400) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -229,11 +216,7 @@ const sports = [
 
 .item-1 {
   grid-row: span 2;
-  background: linear-gradient(
-    135deg,
-    rgba(220, 38, 38, 0.1) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, transparent 100%);
   p {
     display: flex;
     justify-content: center;
@@ -244,11 +227,7 @@ const sports = [
 }
 
 .item-2 {
-  background: linear-gradient(
-    135deg,
-    transparent 0%,
-    rgba(220, 38, 38, 0.05) 100%
-  );
+  background: linear-gradient(135deg, transparent 0%, rgba(220, 38, 38, 0.05) 100%);
   p {
     display: flex;
     justify-content: center;
