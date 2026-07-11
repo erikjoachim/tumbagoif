@@ -276,11 +276,29 @@ See `ui/README.md` for detailed instructions. Each package manager uses a differ
 
 ## Git Conventions
 
-- Commit messages should be concise and descriptive
-- Push directly to main is allowed (no branch protection)
-- No pre-commit hooks currently configured
-- Use `git mv` when moving files to preserve history
-- Only root `package-lock.json` is tracked — delete stale per-workspace lockfiles
+### Commit Process
+
+- **No commits without explicit permission.** Agent must:
+  1. Stage intended files only (show `git status` + `git diff --staged`)
+  2. Propose commit message for user approval
+  3. Only commit after user confirms
+- **No force-push** or `--amend` unless explicitly requested
+- **No empty commits**
+
+### Commit Message Style
+
+- **Conventional Commits:** `type(scope): lowercase description`
+  - Types: `feat`, `fix`, `chore`, `docs`, `refactor`, `ci`
+  - Scopes match workspace dirs: `web`, `ui`, `ui/tokens`, `ui/components`, etc.
+  - No trailing period, lowercase after colon
+  - For larger changes, add bulleted body lines below the subject
+
+### Other
+
+- Push direct to `main` allowed (no branch protection)
+- No pre-commit hooks configured
+- Use `git mv` for moves to preserve history
+- Only root `package-lock.json` tracked — delete stale per-workspace lockfiles
 
 ## TypeScript Configuration
 
