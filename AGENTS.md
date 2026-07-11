@@ -105,6 +105,7 @@ import.meta.env.VITE_SOME_VAR
 tumbagoif/
 ├── package.json              npm workspaces: ["ui", "web"]
 ├── package-lock.json         Single lockfile for all workspaces
+├── .npmrc                    save-exact=true (exact version pinning)
 ├── .prettierrc               Prettier config
 ├── .prettierignore           Prettier ignore rules
 ├── .vscode/
@@ -240,6 +241,12 @@ See `ui/src/styles/tokens.css` for available variables.
    ```
 4. Run `npm install` from root
 
+### Version pinning
+
+All `dependencies` and `devDependencies` use **exact versions** (no `^` or `~` ranges) for security and reproducibility. `peerDependencies` may keep ranges. Enforced by `save-exact=true` in `.npmrc` — new `npm install <pkg>` automatically writes exact versions.
+
+To bump a dependency: update the version in `package.json`, then run `npm install` from root to sync `package-lock.json`.
+
 ### Dependency hoisting
 
 npm hoists shared deps to root `node_modules/`. A per-workspace `node_modules/` appears only when version conflicts prevent hoisting.
@@ -325,3 +332,4 @@ The website is deployed to Azure Static Web Apps.
 | **Deploy fails** | Check `AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_ISLAND_0EAC90703` secret is set. |
 | **Prettier not formatting** | Verify `.prettierrc` at root, Prettier extension installed (VSCode), file not in `.prettierignore` |
 | **Environment variables** | Prefix with `VITE_` to expose to client. |
+| **Exact version pinning** | `.npmrc` has `save-exact=true`. Edit version in `package.json` + run `npm install` to sync lockfile. Peer deps may keep ranges. |
