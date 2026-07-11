@@ -3,6 +3,11 @@ import "../src/styles/tokens.css";
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      options: {
+        dark: { name: 'Tumba GOIF - BG Dark', value: 'var(--color-bg-primary)' },
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -10,6 +15,9 @@ const preview: Preview = {
       },
     },
   },
+  initialGlobals: {
+      backgrounds: { value: 'dark' },
+    },
 };
 
 export default preview;
