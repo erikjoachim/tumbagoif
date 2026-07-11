@@ -1,16 +1,21 @@
-name: Website CI/CD 
+name: Website CI/CD
 
 on:
   push:
     branches:
       - main
-    paths-ignore:
-      - '**.md'
-      - 'AGENTS.md'
+    paths:
+      - 'web/**'
+      - '!**.md'
+      - '!AGENTS.md'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+    paths:
+      - 'web/**'
+      - '!**.md'
+      - '!AGENTS.md'
 
 jobs:
   build_and_deploy_job:
