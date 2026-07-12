@@ -16,7 +16,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
-    "baseUrl": ".",
     "paths": {
       "@tumbagoif/ui": ["./src"]
     }
