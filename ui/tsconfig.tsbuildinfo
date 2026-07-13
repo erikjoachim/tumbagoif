@@ -1,1 +1,18 @@
-{"root":["./src/vite-env.d.ts","./src/vue/index.ts","./src/vue/badge/tbadge.stories.ts","./src/vue/badge/tbadge.vue","./src/vue/button/tbutton.stories.ts","./src/vue/button/tbutton.vue","./src/vue/card/tcard.stories.ts","./src/vue/card/tcard.vue","./src/vue/section-header/tsectionheader.stories.ts","./src/vue/section-header/tsectionheader.vue","./src/vue/stats-grid/tstatsgrid.stories.ts","./src/vue/stats-grid/tstatsgrid.vue"],"version":"5.9.3"}
+{
+  "root": [
+    "./src/vite-env.d.ts",
+    "./src/shared/parser/highlight.ts",
+    "./src/vue/index.ts",
+    "./src/vue/core/badge/tbadge.stories.ts",
+    "./src/vue/core/badge/tbadge.vue",
+    "./src/vue/core/button/tbutton.stories.ts",
+    "./src/vue/core/button/tbutton.vue",
+    "./src/vue/layout/card/tcard.stories.ts",
+    "./src/vue/layout/card/tcard.vue",
+    "./src/vue/layout/stats-card/tstatscard.stories.ts",
+    "./src/vue/layout/stats-card/tstatscard.vue",
+    "./src/vue/typography/header-text/theadertext.stories.ts",
+    "./src/vue/typography/header-text/theadertext.vue"
+  ],
+  "version": "5.9.3"
+}

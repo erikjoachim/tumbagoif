@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TCard from "../../card/TCard.vue";
+import TCard from "../card/TCard.vue";
 
 withDefaults(
   defineProps<{
