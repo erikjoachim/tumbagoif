@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const stats = [
-  { value: "4", label: "Idrottsgrenar" },
-  { value: "500+", label: "Medlemmar" },
-  { value: "15+", label: "År av Gemenskap" },
   { value: "100+", label: "Aktiviteter/Vecka" },
+  { value: "4", label: "Idrottsgrenar" },
+  { value: "900+", label: "Medlemmar" },
+  { value: "100+", label: "År av historia" },
 ];
 </script>
 
@@ -13,13 +13,21 @@ const stats = [
       <div class="about-content">
         <h2 class="section-title">En förening för <span class="highlight">alla</span></h2>
         <p class="section-description">
-          Vi är en ideell idrottsförening som samlar människor genom rörelse och gemenskap. Vår
-          paraplyorganisation förenar fyra idrottsgrenar, var och en med egna anläggningar,
+          Vi är en ideell idrottsförening som samlar människor genom rörelse och gemenskap.
+          Föreningen bildades 1908 och består idag av sektionerna gymnastik, innebandy, basket och
+          gymmix med en gemensam huvudstyrelse. Varje sektion har egna autonoma ledningsgrupper,
           engagerade ledare och varma sammanhang.
         </p>
         <p class="section-description">
           Hos oss finns plats för alla – oavsett om du vill tävla, hålla dig i form, eller bara ha
           kul tillsammans med andra.
+        </p>
+        <p class="section-description">
+          Vår värdegrund är enkel: träning ska vara lustfylld, stimulerande och utvecklande oavsett
+          förutsättningar, och moral och empati väger tyngre än resultatet. Vi har nolltolerans mot
+          osportsligt beteende, både i och utanför hallen, och våra välutbildade ledare genomför
+          säkra övningar och träningar. Alla behandlas lika oavsett kön, läggning, religion och
+          etnicitet.
         </p>
       </div>
 

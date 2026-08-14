@@ -32,7 +32,7 @@ const navigation = {
         <div class="footer-brand">
           <h3 class="brand-name">Tumba Gymnastik och Idrottsförening</h3>
           <p class="brand-tagline">
-            En ideell förening som skapar gemenskap och glädje genom idrott för alla.
+            En ideell förening som skapar gemenskap och glädje genom idrott för alla – sedan 1908.
           </p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="Facebook">

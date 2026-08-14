@@ -2,23 +2,26 @@
 const sports = [
   {
     name: "Gymnastik",
-    description: "Utveckla styrka, rörlighet och koordination i en trygg miljö.",
+    description:
+      "Verksamhet från 3 års ålder för både killar och tjejer. Föräldra-barngymnastik, barngymnastik, tränings- och tävlingsgymnastik med inriktning mot truppgymnastik, samt gymnastik för barn med funktionsnedsättning. Vi håller till i Broängen och Kassmyra med verksamhet 7 dagar i veckan.",
     icon: "🤸",
-    url: "#",
+    url: "https://www.tumbagymnastik.se",
     size: "large",
   },
   {
     name: "Basket",
-    description: "Träning och matcher för alla åldrar. Från nybörjare till erfarna spelare.",
+    description:
+      "En av de största basketklubbarna i södra Stockholm. Barn, ungdomar och vuxna spelar basket i en trygg, inkluderande och utvecklande miljö – oavsett om du är nybörjare eller erfaren spelare. Sektionen bildades 1965.",
     icon: "🏀",
-    url: "#",
+    url: "https://www.tumbabasket.se",
     size: "medium",
   },
   {
     name: "Innebandy",
-    description: "Lagsport med tempo och glädje. Lag för alla nivåer.",
+    description:
+      "Lagsport med tempo och glädje. Sektionen bildades 1994 och strävar efter stor bredd på både flick- och pojksidan – här får alla vara med, oavsett nivå.",
     icon: "🏑",
-    url: "#",
+    url: "https://www.tumbainnebandy.se",
     size: "medium",
   },
   {
@@ -37,7 +40,8 @@ const sports = [
       <div class="sports-header">
         <h2 class="section-title">Hitta din <span class="highlight">grej</span></h2>
         <p class="section-description">
-          Utforska våra fyra idrottsgrenar, var och en med egna träningsmöjligheter och sammanhang.
+          Utforska våra fyra idrottsgrenar, var och en med egna träningsmöjligheter. Kika gärna på
+          respektive sektions hemsida!
         </p>
       </div>
 
