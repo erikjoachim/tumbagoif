@@ -1,7 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw, RouteLocationNormalized } from "vue-router";
 
-let routes: RouteRecordRaw[] = [
+// TEMPORARY preview logic — lets colleagues bypass the under-construction page via the
+// /preview path. Remove together with the guard below when the site launches.
+export const previewPath = "/preview";
+
+const isPreviewPath = (path: string) => path === previewPath || path.startsWith(`${previewPath}/`);
+
+const underConstruction = import.meta.env.VITE_UNDER_CONSTRUCTION === "true";
+
+const routes: RouteRecordRaw[] = [
   {
     path: "/",
     name: "Home",
@@ -22,16 +30,31 @@ let routes: RouteRecordRaw[] = [
     name: "UnderConstruction",
     component: () => import("../pages/UnderConstruction.vue"),
   },
+  // TEMPORARY preview routes — mirror the real pages under /preview. Remove with the
+  // preview logic when the site launches.
+  {
+    path: previewPath,
+    name: "PreviewHome",
+    component: () => import("../pages/Home.vue"),
+  },
+  {
+    path: `${previewPath}/integritetspolicy`,
+    name: "PreviewIntegritetspolicy",
+    component: () => import("../pages/PrivacyPolicy.vue"),
+  },
+  {
+    path: `${previewPath}/cookies`,
+    name: "PreviewCookies",
+    component: () => import("../pages/CookiesPolicy.vue"),
+  },
 ];
 
-if (import.meta.env.VITE_UNDER_CONSTRUCTION === "true") {
-  routes = [
-    {
-      path: "/:pathMatch(.*)*",
-      name: "UnderConstruction",
-      component: () => import("../pages/UnderConstruction.vue"),
-    },
-  ];
+if (underConstruction) {
+  routes.push({
+    path: "/:pathMatch(.*)*",
+    name: "CatchAll",
+    component: () => import("../pages/UnderConstruction.vue"),
+  });
 }
 
 const router = createRouter({
@@ -54,5 +77,16 @@ const router = createRouter({
     }
   },
 });
+
+// TEMPORARY preview logic — redirects all traffic to the under-construction page except
+// /preview (and the UC page itself). Remove when the site launches.
+if (underConstruction) {
+  router.beforeEach((to) => {
+    if (isPreviewPath(to.path) || to.path === "/under-konstruktion") {
+      return true;
+    }
+    return { path: "/under-konstruktion" };
+  });
+}
 
 export default router;
