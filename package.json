@@ -2,7 +2,7 @@
   "private": true,
   "workspaces": [
     "ui",
-    "web"
+    "website"
   ],
   "scripts": {
     "format": "prettier --write .",
