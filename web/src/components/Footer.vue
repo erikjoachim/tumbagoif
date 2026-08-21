@@ -1,16 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useRoute } from "vue-router";
-import { previewPath } from "../router";
-
 const currentYear = new Date().getFullYear();
-const route = useRoute();
-
-// TEMPORARY preview logic — keeps footer links inside /preview so the site is navigable
-// during preview. Remove together with legalLinks when the site launches.
-const isPreview = computed(
-  () => route.path === previewPath || route.path.startsWith(`${previewPath}/`),
-);
 
 const navigation = {
   sports: [
@@ -34,16 +23,6 @@ const navigation = {
     { name: "Cookies", href: "/cookies" },
   ],
 };
-
-// TEMPORARY preview logic — see isPreview above. Remove with it.
-const legalLinks = computed(() =>
-  navigation.legal.map((item) => ({
-    ...item,
-    href: item.href.startsWith("/") && !item.href.startsWith("//") && isPreview.value
-      ? `${previewPath}${item.href}`
-      : item.href,
-  })),
-);
 </script>
 
 <template>
@@ -102,7 +81,7 @@ const legalLinks = computed(() =>
           <div class="link-group">
             <h4 class="link-title">Information</h4>
             <ul class="link-list">
-              <li v-for="item in legalLinks" :key="item.name">
+              <li v-for="item in navigation.legal" :key="item.name">
                 <a :href="item.href" class="link">{{ item.name }}</a>
               </li>
             </ul>
