@@ -79,7 +79,7 @@ auth/
 │       ├── managed-identity.bicep     # System-assigned managed identity
 │       └── service-connection.bicep   # Container App ↔ PostgreSQL identity connection
 │
-├── auth-server/               # Hono + better-auth backend
+├── server/                    # Hono + better-auth backend
 │   ├── package.json
 │   ├── tsconfig.json
 │   ├── vitest.config.ts
@@ -327,7 +327,7 @@ app_role_definitions: belongs to apps, referenced by user_app_roles
 ### Instance setup
 
 ```typescript
-// auth-server/src/auth.ts
+// server/src/auth.ts
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { microsoft } from "better-auth/social-providers";
@@ -380,7 +380,7 @@ export const auth = betterAuth({
 ### Permissions (RBAC)
 
 ```typescript
-// auth-server/src/permissions.ts
+// server/src/permissions.ts
 import { createAccessControl } from "better-auth/plugins/access";
 import { defaultStatements, adminAc } from "better-auth/plugins/admin/access";
 
@@ -989,7 +989,7 @@ PostgreSQL Flexible Server
 
 Two GitHub Actions workflows:
 
-1. **Auth server:** On push to `auth/auth-server/**` → build Docker → push to ACR → deploy Container Apps
+1. **Auth server:** On push to `auth/server/**` → build Docker → push to ACR → deploy Container Apps
 2. **Admin UI:** On push to `auth/admin-ui/**` → build React → deploy Static Web Apps
 
 Both deploy to `main` only.
@@ -998,7 +998,7 @@ Both deploy to `main` only.
 
 ## Environment & Dependencies
 
-### auth-server
+### server (auth-server)
 
 Runtime dependencies:
 - `better-auth` — core auth framework
