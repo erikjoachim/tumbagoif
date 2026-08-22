@@ -25,7 +25,7 @@ export const users = pgTable(
     type: text("type").notNull(),
     photoUrl: text("photo_url"),
     /** Better-auth user id (link to auth service's own user table) */
-    authUserId: uuid("auth_user_id"),
+    authUserId: text("auth_user_id"),
     entraSynced: boolean("entra_synced").default(false).notNull(),
     lastSyncAt: timestamp("last_sync_at", { withTimezone: true }),
     createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
@@ -139,10 +139,7 @@ export const invitations = pgTable(
     acceptedAt: timestamp("accepted_at", { withTimezone: true }),
     createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
   },
-  (t) => [
-    index("idx_invitations_email").on(t.email),
-    index("idx_invitations_token").on(t.token),
-  ],
+  (t) => [index("idx_invitations_email").on(t.email), index("idx_invitations_token").on(t.token)],
 );
 
 /** Graph API sync log — audit trail for sync operations. */
