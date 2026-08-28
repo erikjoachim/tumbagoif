@@ -78,7 +78,7 @@ async function upsertEntraUser(account: AccountData): Promise<void> {
 }
 
 export const auth = betterAuth({
-  appName: "Tumba Identity",
+  appName: "Tumba GOIF Identity",
   secret: env.BETTER_AUTH_SECRET,
   baseURL: env.BETTER_AUTH_URL,
   // Native pg adapter — Better Auth manages its own tables via CLI migrate.

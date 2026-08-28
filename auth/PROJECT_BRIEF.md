@@ -1,8 +1,32 @@
-# Tumba Auth Service — Project Brief
+# Tumba GOIF Auth Service — Project Brief
+
+## Current Implementation Status
+
+State as of the foundation/WIP merge.
+
+| Area | Status |
+|---|---|
+| Server (Hono + better-auth) | Implemented — local dev only |
+| Microsoft social login (single-tenant Entra) | Implemented |
+| Internal `users` mirror + auto-provisioning hook | Implemented |
+| Guest detection (`tid` vs tenant) | Implemented |
+| Better-auth core tables + custom schema/migrations | Implemented |
+| Admin UI | Not started |
+| OIDC provider (consuming app flow) | Not started |
+| RBAC (global + per-app roles) | Schema only, no endpoints |
+| Entra graph sync | Not started |
+| Tests | Minimal/none |
+| Azure deployment (managed identity, Bicep) | Deferred — decided to solve infra later |
+
+Working detail: local run, env vars, and smoke test in `server/README.md`. Auth flow in `server/docs/auth-flow.md`. Tables in `server/docs/data-model.md`.
+
+> Everything below is architecture **vision**. Parts marked *"as implemented"* match current code; everything else is the plan the service will grow into.
+
+---
 
 ## What This Is
 
-A centralized auth service for Tumba's ecosystem of apps (CMS, portal, standalone apps). It extends Microsoft Entra ID with custom per-app RBAC that Entra Free tier doesn't support natively.
+A centralized auth service for Tumba GOIF's ecosystem of apps (CMS, portal, standalone apps). It extends Microsoft Entra ID with custom per-app RBAC that Entra Free tier doesn't support natively.
 
 **Core problem solved:** Entra Free gives you identity (who is this person?) but not fine-grained app permissions (what can they do in THIS app?). This service bridges that gap.
 
@@ -56,7 +80,7 @@ Auth server runs on Azure Container Apps with public ingress and HTTPS. PostgreS
 
 ### SSO Across Apps
 
-All apps share the same auth service. The auth service maintains a session cookie at `auth.tumba.se`. Once a user authenticates with Microsoft, they stay logged in at the auth service level. Every subsequent app redirect to the auth service sees the existing session and issues a new JWT immediately — no Microsoft prompt. The Microsoft session eventually expires (8-24 hours depending on Entra config), requiring re-authentication.
+All apps share the same auth service. The auth service maintains a session cookie at `identity.tumbagoif.se`. Once a user authenticates with Microsoft, they stay logged in at the auth service level. Every subsequent app redirect to the auth service sees the existing session and issues a new JWT immediately — no Microsoft prompt. The Microsoft session eventually expires (8-24 hours depending on Entra config), requiring re-authentication.
 
 ---
 
@@ -446,7 +470,7 @@ AZURE_CLIENT_SECRET=
 
 # Better-auth
 BETTER_AUTH_SECRET=
-BETTER_AUTH_BASE_URL=https://auth.tumba.se
+BETTER_AUTH_BASE_URL=https://identity.tumbagoif.se
 
 # App
 PORT=3000
@@ -562,7 +586,7 @@ Admin UI                    Auth Server
 
 ```
 1. JWT verification (user identity + roles):
-   - App fetches JWKS from: https://auth.tumba.se/.well-known/jwks.json
+   - App fetches JWKS from: https://identity.tumbagoif.se/.well-known/jwks.json
    - Verifies JWT signature using public keys
    - Reads JWT payload → user identity + global_roles + per-app roles
    - No API key needed — just standard JWKS verification
@@ -573,7 +597,7 @@ Admin UI                    Auth Server
    - Returns requested data
 
 3. User login (OAuth redirect):
-   - App redirects to: https://auth.tumba.se/oauth/authorize
+   - App redirects to: https://identity.tumbagoif.se/oauth/authorize
      ?client_id=<app's client_id>
      &redirect_uri=<registered callback URL>
      &response_type=code
@@ -683,7 +707,7 @@ The auth server exposes `/.well-known/jwks.json` — a standard RFC 7517 endpoin
       "permissions": ["posts.create", "posts.publish"]
     }
   ],
-  "iss": "https://auth.tumba.se",
+  "iss": "https://identity.tumbagoif.se",
   "exp": 1234567890,
   "iat": 1234567890
 }
@@ -1051,4 +1075,4 @@ Dev dependencies:
 - **Testable by design.** Code should be structured so features can be tested independently. Inject dependencies, avoid singletons where possible, keep business logic separate from HTTP concerns.
 - **Managed identity everywhere.** No passwords or connection strings in environment variables. Container App → PostgreSQL via managed identity. Local dev via `az login`. Only exception: Microsoft Graph API uses `ClientSecretCredential` (Graph API doesn't support managed identity for application permissions).
 - **Apps are first-class entities.** Not hardcoded strings. Registered in DB, managed via admin UI, with client_id and per-app API keys.
-- **SSO across all apps.** All apps share the same auth service. Session cookie at auth.tumba.se enables seamless login across CMS, portal, and any future app.
+- **SSO across all apps.** All apps share the same auth service. Session cookie at identity.tumbagoif.se enables seamless login across CMS, portal, and any future app.

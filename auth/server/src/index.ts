@@ -16,6 +16,6 @@ serve(
     port,
   },
   (info) => {
-    console.log(`Tumba Identity auth server running at ${env.BETTER_AUTH_URL} (port ${info.port})`);
+    console.log(`Tumba GOIF Identity auth server running at ${env.BETTER_AUTH_URL} (port ${info.port})`);
   },
 );
