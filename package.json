@@ -2,7 +2,9 @@
   "private": true,
   "workspaces": [
     "ui",
-    "website"
+    "website",
+    "auth/server",
+    "auth/admin-ui"
   ],
   "scripts": {
     "format": "prettier --write .",
