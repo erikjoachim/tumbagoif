@@ -1,11 +1,12 @@
 # Tumba Gymnastik och IF
 
-Monorepo for Tumba Goif sports club applications.
+Monorepo for Tumba GOIF sports club applications.
 
 ## Projects
 
-- **web/** - Public website for Tumba Gymnastik och IF
+- **website/** - Public website for Tumba Gymnastik och IF
 - **ui/** - Shared UI library
-- **cms/** - CMS for public website 
+- **cms/** - CMS for public website
+- **auth/** - Auth/identity service
 
 See `<project>/README.md` for specific details.
