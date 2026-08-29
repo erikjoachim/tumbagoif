@@ -1,6 +1,8 @@
 export { default as TBadge } from "./core/badge/TBadge.vue";
 export { default as TButton } from "./core/button/TButton.vue";
 export { default as TCard } from "./layout/card/TCard.vue";
+export { default as TFooter } from "./layout/footer/TFooter.vue";
+export type { FooterLink, FooterLinkGroup, FooterContact } from "./layout/footer/TFooter.vue";
 export { default as TLinkCard } from "./layout/link-card/TLinkCard.vue";
 export { default as TSocialLinks } from "./layout/social-links/TSocialLinks.vue";
 export type { SocialLink } from "./layout/social-links/TSocialLinks.vue";
