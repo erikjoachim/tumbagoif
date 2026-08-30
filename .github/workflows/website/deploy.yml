@@ -1,6 +1,7 @@
 name: Website - Deploy to Azure
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
