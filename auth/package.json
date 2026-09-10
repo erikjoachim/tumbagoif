@@ -1,0 +1,20 @@
+{
+  "name": "@tumbagoif/auth",
+  "private": true,
+  "workspaces": [
+    "server",
+    "dashboard"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "build:server": "npm run build --workspace @tumbagoif/auth-server",
+    "build:dashboard": "npm run build --workspace @tumbagoif/auth-dashboard",
+    "dev:server": "npm run dev --workspace @tumbagoif/auth-server",
+    "dev:dashboard": "npm run dev --workspace @tumbagoif/auth-dashboard",
+    "lint:dashboard": "npm run lint --workspace @tumbagoif/auth-dashboard",
+    "auth:migrate": "npm run auth:migrate --workspace @tumbagoif/auth-server",
+    "auth:migrate:core": "npm run auth:migrate:core --workspace @tumbagoif/auth-server",
+    "db:migrate": "npm run db:migrate --workspace @tumbagoif/auth-server",
+    "test": "npm run test --workspace @tumbagoif/auth-server"
+  }
+}

@@ -3,10 +3,19 @@
   "workspaces": [
     "ui",
     "website",
-    "auth/server",
-    "auth/admin-ui"
+    "auth/*"
   ],
   "scripts": {
+    "auth:build": "npm run build --workspaces --if-present --workspace @tumbagoif/auth-server --workspace @tumbagoif/auth-dashboard",
+    "auth:build:server": "npm run build --workspace @tumbagoif/auth-server",
+    "auth:build:dashboard": "npm run build --workspace @tumbagoif/auth-dashboard",
+    "auth:dev:server": "npm run dev --workspace @tumbagoif/auth-server",
+    "auth:dev:dashboard": "npm run dev --workspace @tumbagoif/auth-dashboard",
+    "auth:test": "npm run test --workspace @tumbagoif/auth-server",
+    "auth:lint": "npm run lint --workspace @tumbagoif/auth-dashboard",
+    "auth:migrate": "npm run auth:migrate --workspace @tumbagoif/auth-server",
+    "auth:migrate:core": "npm run auth:migrate:core --workspace @tumbagoif/auth-server",
+    "auth:db:migrate": "npm run db:migrate --workspace @tumbagoif/auth-server",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

@@ -15,6 +15,20 @@
       "when": 1787432965239,
       "tag": "0001_auth_user_id_to_text",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1788558000000,
+      "tag": "0002_better_auth_account_issuer_backfill",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1789044800000,
+      "tag": "0003_better_auth_account_issuer_relax",
+      "breakpoints": true
     }
   ]
 }
