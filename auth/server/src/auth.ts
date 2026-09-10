@@ -1,7 +1,10 @@
 import { betterAuth } from "better-auth";
+import { openAPI } from "better-auth/plugins";
 import { db, pool } from "./db";
 import { users } from "./db/schema";
 import { env } from "./env";
+
+const dashboardOrigin = "http://localhost:5174";
 
 type AccountData = {
   userId: string;
@@ -81,6 +84,7 @@ export const auth = betterAuth({
   appName: "Tumba GOIF Identity",
   secret: env.BETTER_AUTH_SECRET,
   baseURL: env.BETTER_AUTH_URL,
+  trustedOrigins: [dashboardOrigin, "http://localhost:3000"],
   // Native pg adapter — Better Auth manages its own tables via CLI migrate.
   // Drizzle (`db`) is for feature queries against custom tables only.
   database: pool,
@@ -93,6 +97,8 @@ export const auth = betterAuth({
       tenantId: env.MICROSOFT_TENANT_ID,
     },
   },
+
+  plugins: [openAPI()],
 
   databaseHooks: {
     account: {

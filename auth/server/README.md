@@ -30,7 +30,7 @@ Prerequisites:
 ```bash
 npm install                # from repo root
 cp .env.example .env       # then fill in values
-npm run auth:migrate       # better-auth core tables (user, session, account, verification)
+npm run auth:migrate       # full migration: drizzle first, then better-auth core tables
 npm run db:generate        # drizzle migration for custom tables (only after schema changes)
 npm run db:migrate         # apply drizzle migrations
 npm run dev                # starts server on :3000
@@ -47,6 +47,9 @@ npm run dev                # starts server on :3000
 | `MICROSOFT_CLIENT_SECRET` | runtime | Secret **value**, not secret ID |
 | `MICROSOFT_TENANT_ID` | runtime | Your Entra directory (tenant) ID |
 
+Dashboard dev origin `http://localhost:5174` trusted in auth config (`trustedOrigins`).
+Use absolute callback URLs in dashboard sign-in (`http://localhost:5174/`) so OAuth returns to dashboard, not auth server origin.
+
 The three `MICROSOFT_*` vars are optional at boot so DB migrations can run before an Entra app registration exists. Server runs without them, but Microsoft login will fail.
 
 ## Scripts
@@ -57,10 +60,17 @@ The three `MICROSOFT_*` vars are optional at boot so DB migrations can run befor
 | `npm run build` | `tsc` typecheck + emit |
 | `npm run start` | run compiled `dist/` |
 | `npm run test` | vitest run |
-| `npm run auth:migrate` | create/update better-auth core tables |
+| `npm run auth:migrate` | full migration: drizzle first, then better-auth core tables |
+| `npm run auth:migrate:core` | create/update better-auth core tables only |
 | `npm run db:generate` | new drizzle migration from schema changes |
 | `npm run db:migrate` | apply pending drizzle migrations |
 | `npm run db:push` | apply schema directly (dev only) |
+
+## Better-auth 1.7 issuer fix
+
+If runtime logs `Database schema mismatch` for `account.issuer`, run `npm run auth:migrate`.
+Migration `0003_better_auth_account_issuer_relax.sql` drops `NOT NULL` on `account.issuer`
+and removes `issuer + accountId` unique indexes so new inserts from better-auth 1.7.3+ work.
 
 ## Smoke test
 

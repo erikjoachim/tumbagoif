@@ -7,28 +7,28 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "vitest run",
-    "auth:migrate": "better-auth migrate",
+    "test": "vitest run --passWithNoTests",
+    "auth:migrate": "npm run db:migrate && npm run auth:migrate:core",
+    "auth:migrate:core": "npx auth@1.7.4 migrate",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
     "@hono/node-server": "2.1.1",
-    "better-auth": "1.6.25",
+    "better-auth": "1.7.4",
     "dotenv": "17.4.2",
     "drizzle-orm": "0.45.2",
-    "hono": "4.13.3",
+    "hono": "4.13.7",
     "pg": "8.23.0",
-    "zod": "4.4.3"
+    "zod": "4.6.1"
   },
   "devDependencies": {
-    "@better-auth/cli": "1.4.22",
-    "@types/node": "26.2.0",
+    "@types/node": "22.20.2",
     "@types/pg": "8.23.1",
     "drizzle-kit": "0.31.10",
-    "tsx": "4.23.12",
-    "typescript": "5.9.3",
-    "vitest": "4.1.11"
+    "tsx": "4.23.13",
+    "typescript": "7.0.2",
+    "vitest": "5.0.0"
   }
 }

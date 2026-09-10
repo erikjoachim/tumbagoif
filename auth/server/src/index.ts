@@ -7,6 +7,8 @@ const app = new Hono();
 
 app.all("/api/auth/*", (c) => auth.handler(c.req.raw));
 
+app.get("/", (c) => c.redirect("/api/auth/reference", 302));
+
 app.get("/api/health", (c) => c.json({ status: "ok" }));
 
 const port = 3000;

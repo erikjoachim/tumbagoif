@@ -20,6 +20,8 @@ Only `users` is actively written today (on MS sign-in). The role/app/invitation/
 
 **Important**: better-auth user `id` is a nanoid string like `rC2etUWtdMT9U8RAt2XtVoYAwkOVCMQv` — **not** a UUID. Any column storing it must be `text`.
 
+`account.issuer` may exist from older 1.7.0-1.7.2 migrations, but should be nullable and not part of a unique index.
+
 ## Custom tables (Drizzle)
 
 ### users — internal user mirror

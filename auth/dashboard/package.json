@@ -1,0 +1,29 @@
+{
+  "name": "@tumbagoif/auth-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "api:generate": "npx nswag openapi2tsclient /input:http://localhost:3000/api/auth/open-api/generate-schema /output:src/lib/auth-api-client.ts /template:Fetch /className:AuthApiClient /operationGenerationMode:SingleClientFromOperationId /generateClientInterfaces:true /useAbortSignal:true"
+  },
+  "dependencies": {
+    "better-auth": "1.7.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-router-dom": "7.18.3"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "nswag": "14.7.1",
+    "oxlint": "1.82.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.0"
+  }
+}
