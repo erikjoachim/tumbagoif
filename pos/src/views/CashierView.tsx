@@ -51,6 +51,17 @@ export function CashierView() {
     return filtered.filter((p) => p.category === activeCategory);
   }, [filtered, activeCategory]);
 
+  const categoryGroups = useMemo(() => {
+    const groups = new Map<string, Product[]>();
+    for (const product of displayProducts) {
+      const category = product.category || 'General';
+      const arr = groups.get(category) ?? [];
+      arr.push(product);
+      groups.set(category, arr);
+    }
+    return Array.from(groups.entries()).sort(([a], [b]) => a.localeCompare(b));
+  }, [displayProducts]);
+
   const cartTotal = useMemo(() => cart.reduce((sum, i) => sum + i.unit_price * i.quantity, 0), [cart]);
   const cartCount = useMemo(() => cart.reduce((sum, i) => sum + i.quantity, 0), [cart]);
 
@@ -166,8 +177,19 @@ export function CashierView() {
             <p className="text-xs text-slate-300 mt-0.5">Add products in the Inventory tab</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-2.5">
-            {displayProducts.map((product) => {
+          <div className="space-y-5">
+            {categoryGroups.map(([category, products]) => (
+              <div key={category}>
+                <div className="flex items-center justify-between px-1 mb-2">
+                  <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wide">
+                    {category}
+                  </h3>
+                  <span className="text-[10px] text-slate-400 font-medium">
+                    {products.length} {products.length === 1 ? 'product' : 'products'}
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-2.5">
+                  {products.map((product) => {
               const inCart = cart.find((i) => i.product_id === product.id);
               const outOfStock = product.stock <= 0;
               return (
@@ -210,7 +232,10 @@ export function CashierView() {
                   </div>
                 </button>
               );
-            })}
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
