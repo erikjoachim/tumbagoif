@@ -38,7 +38,7 @@ function App() {
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 flex items-center justify-around px-2 py-1.5 z-40 max-w-2xl mx-auto">
+      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 flex items-center justify-around px-2 py-1.5 z-40 w-full">
         {tabs.map(({ id, label, icon: Icon }) => {
           const active = tab === id;
           return (
