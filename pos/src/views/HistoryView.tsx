@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { Receipt, ChevronDown, ChevronUp, Calendar, TrendingUp, Package as PackageIcon, ListFilter } from 'lucide-react';
+import { Receipt, ChevronDown, ChevronUp, Calendar, TrendingUp, Package as PackageIcon, ListFilter, Trash2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { formatCurrency, formatDateTime, formatTime, formatDateLabel } from '@/lib/format';
 import type { SaleWithItems, SaleItem } from '@/types';
@@ -29,6 +29,17 @@ export function HistoryView() {
   useEffect(() => {
     loadSales();
   }, [loadSales]);
+
+  const historyDeleteEnabled = import.meta.env.VITE_ENABLE_HISTORY_DELETE === 'true';
+
+  const handleClearHistory = async () => {
+    if (!window.confirm('Delete ALL sales history? This cannot be undone.')) return;
+    setLoading(true);
+    const { error } = await supabase.from('sales').delete().gte('created_at', '1970-01-01');
+    if (error) console.error('Failed to clear history:', error);
+    setSelectedDate(null);
+    await loadSales();
+  };
 
   // Build list of dates that have sales
   const availableDates = useMemo(() => {
@@ -112,6 +123,15 @@ export function HistoryView() {
           </div>
           <span className="text-sm font-bold text-slate-900">{formatCurrency(allTimeTotal)}</span>
         </div>
+        {historyDeleteEnabled && (
+          <button
+            onClick={handleClearHistory}
+            className="mt-2.5 w-full flex items-center justify-center gap-1.5 py-2 rounded-xl bg-red-50 text-red-500 text-xs font-semibold active:scale-[0.98] transition-all border border-red-100"
+          >
+            <Trash2 className="w-3.5 h-3.5" />
+            Clear all history
+          </button>
+        )}
       </div>
 
       {/* View toggle + Date filter */}

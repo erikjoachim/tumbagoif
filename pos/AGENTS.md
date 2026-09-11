@@ -45,6 +45,7 @@ Notable TS settings: `noUnusedLocals`/`noUnusedParameters` are **disabled** — 
 
 - Deploy runs from branch `release/point-of-sale` via `.github/workflows/pos-deploy.yml` (repo root), NOT from `main`. Pushing to `main` will NOT deploy the POS.
 - The workflow builds inside `./pos` and deploys `pos/dist`. Build-time env comes from repo secrets, mapped from `POS_`-prefixed secret names to the `VITE_` vars the code reads: `POS_VITE_SUPABASE_URL`, `POS_VITE_SUPABASE_PUBLISHABLE_KEY` (not the local `.env`). The SWA token secret is `AZURE_STATIC_WEB_APPS_API_TOKEN_POS` (separate SWA resource from the website's `AZURE_STATIC_WEB_APPS..._CALM_ISLAND...`).
+- `VITE_ENABLE_HISTORY_DELETE` (plain env var in the workflow, public, not a secret) shows a "Clear all history" button in the History tab used for testing; it is off unless the flag is set to `true`.
 
 ## Formatting
 
