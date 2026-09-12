@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
-import { Package as PackageIcon } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
-import { formatCurrency } from '@/lib/format';
-import type { Product } from '@/types';
+import { useEffect, useMemo, useState } from "react";
+import { Package as PackageIcon } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+import { formatCurrency } from "@/lib/format";
+import type { Product } from "@/types";
 
 export function MenuView() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -12,11 +12,11 @@ export function MenuView() {
     let cancelled = false;
     (async () => {
       const { data, error } = await supabase
-        .from('products')
-        .select('*')
-        .eq('show_in_menu', true)
-        .order('name');
-      if (error) console.error('Failed to load menu:', error);
+        .from("products")
+        .select("*")
+        .eq("show_in_menu", true)
+        .order("name");
+      if (error) console.error("Failed to load menu:", error);
       if (!cancelled) setProducts(data ?? []);
       setLoading(false);
     })();
@@ -28,7 +28,7 @@ export function MenuView() {
   const groups = useMemo(() => {
     const map = new Map<string, Product[]>();
     for (const product of products) {
-      const category = product.category || 'General';
+      const category = product.category || "General";
       const arr = map.get(category) ?? [];
       arr.push(product);
       map.set(category, arr);
@@ -41,7 +41,7 @@ export function MenuView() {
       <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3 sticky top-0 z-30">
         <div>
           <h1 className="text-base font-bold text-slate-900 leading-tight">Prislista</h1>
-          <p className="text-[10px] text-slate-400 leading-tight">Menu &amp; prices</p>
+          <p className="text-[10px] text-slate-400 leading-tight">Tumba Basket - Kafeteria</p>
         </div>
       </header>
 
@@ -66,7 +66,7 @@ export function MenuView() {
                   <li
                     key={product.id}
                     className={`px-4 py-3 flex items-center justify-between gap-3 ${
-                      product.stock <= 0 ? 'opacity-50' : ''
+                      product.stock <= 0 ? "opacity-50" : ""
                     }`}
                   >
                     <div className="min-w-0">
