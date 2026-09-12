@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { Package, ShoppingCart, Receipt, Plus, ExternalLink } from 'lucide-react';
-import { Link, Route, Routes } from 'react-router-dom';
-import { InventoryView } from '@/views/InventoryView';
-import { CashierView } from '@/views/CashierView';
-import { HistoryView } from '@/views/HistoryView';
-import { MenuView } from '@/views/MenuView';
+import { useState } from "react";
+import { Package, ShoppingCart, Receipt, Plus, ExternalLink } from "lucide-react";
+import { Link, Route, Routes } from "react-router-dom";
+import { InventoryView } from "@/views/InventoryView";
+import { CashierView } from "@/views/CashierView";
+import { HistoryView } from "@/views/HistoryView";
+import { MenuView } from "@/views/MenuView";
 
-type Tab = 'cashier' | 'inventory' | 'history';
+type Tab = "cashier" | "inventory" | "history";
 
 function App() {
   return (
@@ -18,12 +18,12 @@ function App() {
 }
 
 function PosShell() {
-  const [tab, setTab] = useState<Tab>('cashier');
+  const [tab, setTab] = useState<Tab>("cashier");
 
   const tabs: { id: Tab; label: string; icon: typeof Package }[] = [
-    { id: 'cashier', label: 'Cashier', icon: ShoppingCart },
-    { id: 'inventory', label: 'Inventory', icon: Package },
-    { id: 'history', label: 'History', icon: Receipt },
+    { id: "cashier", label: "Cashier", icon: ShoppingCart },
+    { id: "inventory", label: "Inventory", icon: Package },
+    { id: "history", label: "History", icon: Receipt },
   ];
 
   return (
@@ -35,7 +35,9 @@ function PosShell() {
             <Plus className="w-5 h-5 text-white rotate-45" strokeWidth={3} />
           </div>
           <div>
-            <h1 className="text-base font-bold text-slate-900 leading-tight">QuickPOS</h1>
+            <h1 className="text-base font-bold text-slate-900 leading-tight">
+              Tumba Basket - QuickPOS
+            </h1>
             <p className="text-[10px] text-slate-400 leading-tight">Point of Sale</p>
           </div>
         </div>
@@ -50,9 +52,9 @@ function PosShell() {
 
       {/* Content */}
       <main className="flex-1 overflow-y-auto pb-20" key={tab}>
-        {tab === 'cashier' && <CashierView />}
-        {tab === 'inventory' && <InventoryView />}
-        {tab === 'history' && <HistoryView />}
+        {tab === "cashier" && <CashierView />}
+        {tab === "inventory" && <InventoryView />}
+        {tab === "history" && <HistoryView />}
       </main>
 
       {/* Bottom Navigation */}
@@ -64,14 +66,14 @@ function PosShell() {
               key={id}
               onClick={() => setTab(id)}
               className={`flex flex-col items-center gap-0.5 px-4 py-1.5 rounded-xl transition-all duration-200 flex-1 ${
-                active ? 'text-emerald-600' : 'text-slate-400 hover:text-slate-600'
+                active ? "text-emerald-600" : "text-slate-400 hover:text-slate-600"
               }`}
             >
               <Icon
-                className={`w-5 h-5 transition-transform duration-200 ${active ? 'scale-110' : ''}`}
+                className={`w-5 h-5 transition-transform duration-200 ${active ? "scale-110" : ""}`}
                 strokeWidth={active ? 2.5 : 2}
               />
-              <span className={`text-[10px] font-medium ${active ? 'font-semibold' : ''}`}>
+              <span className={`text-[10px] font-medium ${active ? "font-semibold" : ""}`}>
                 {label}
               </span>
             </button>
