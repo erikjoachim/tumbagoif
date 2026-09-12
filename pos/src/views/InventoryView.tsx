@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Plus, Search, Pencil, Trash2, X, Package as PackageIcon, Minus, AlertTriangle } from 'lucide-react';
+import { Plus, Search, Pencil, Trash2, X, Package as PackageIcon, Minus, AlertTriangle, Eye, EyeOff } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { formatCurrency } from '@/lib/format';
 import type { Product } from '@/types';
@@ -92,6 +92,15 @@ export function InventoryView() {
       .eq('id', product.id);
     if (error) console.error('Adjust failed:', error);
     setAdjustingId(null);
+    await loadProducts();
+  };
+
+  const toggleMenuVisibility = async (product: Product) => {
+    const { error } = await supabase
+      .from('products')
+      .update({ show_in_menu: !product.show_in_menu })
+      .eq('id', product.id);
+    if (error) console.error('Toggle failed:', error);
     await loadProducts();
   };
 
@@ -220,19 +229,37 @@ export function InventoryView() {
                   </button>
                 </div>
 
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col items-end gap-1.5">
                   <button
-                    onClick={() => startEdit(product)}
-                    className="w-7 h-7 rounded-lg flex items-center justify-center active:scale-90 transition-transform"
+                    onClick={() => toggleMenuVisibility(product)}
+                    title={product.show_in_menu ? 'Dölj från prislista' : 'Visa i prislista'}
+                    className={`flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-[10px] font-medium active:scale-90 transition-transform ${
+                      product.show_in_menu
+                        ? 'bg-emerald-50 text-emerald-600'
+                        : 'bg-slate-100 text-slate-500'
+                    }`}
                   >
-                    <Pencil className="w-3.5 h-3.5 text-slate-400" />
+                    {product.show_in_menu ? (
+                      <Eye className="w-3.5 h-3.5 text-emerald-500" />
+                    ) : (
+                      <EyeOff className="w-3.5 h-3.5 text-slate-400" />
+                    )}
+                    {product.show_in_menu ? 'Dölj från prislista' : 'Visa i prislista'}
                   </button>
-                  <button
-                    onClick={() => handleDelete(product.id)}
-                    className="w-7 h-7 rounded-lg flex items-center justify-center active:scale-90 transition-transform"
-                  >
-                    <Trash2 className="w-3.5 h-3.5 text-red-400" />
-                  </button>
+                  <div className="flex gap-1">
+                    <button
+                      onClick={() => startEdit(product)}
+                      className="w-7 h-7 rounded-lg flex items-center justify-center active:scale-90 transition-transform"
+                    >
+                      <Pencil className="w-3.5 h-3.5 text-slate-400" />
+                    </button>
+                    <button
+                      onClick={() => handleDelete(product.id)}
+                      className="w-7 h-7 rounded-lg flex items-center justify-center active:scale-90 transition-transform"
+                    >
+                      <Trash2 className="w-3.5 h-3.5 text-red-400" />
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

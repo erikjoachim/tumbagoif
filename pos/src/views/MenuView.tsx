@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { ArrowLeft, Package as PackageIcon } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Package as PackageIcon } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { formatCurrency } from '@/lib/format';
 import type { Product } from '@/types';
@@ -12,7 +11,11 @@ export function MenuView() {
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const { data, error } = await supabase.from('products').select('*').order('name');
+      const { data, error } = await supabase
+        .from('products')
+        .select('*')
+        .eq('show_in_menu', true)
+        .order('name');
       if (error) console.error('Failed to load menu:', error);
       if (!cancelled) setProducts(data ?? []);
       setLoading(false);
@@ -36,13 +39,6 @@ export function MenuView() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
       <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-3 sticky top-0 z-30">
-        <Link
-          to="/"
-          aria-label="Tillbaka"
-          className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600 active:scale-90 transition-transform flex-shrink-0"
-        >
-          <ArrowLeft className="w-5 h-5" />
-        </Link>
         <div>
           <h1 className="text-base font-bold text-slate-900 leading-tight">Prislista</h1>
           <p className="text-[10px] text-slate-400 leading-tight">Menu &amp; prices</p>

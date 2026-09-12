@@ -11,7 +11,7 @@ type Tab = 'cashier' | 'inventory' | 'history';
 function App() {
   return (
     <Routes>
-      <Route path="/pris-lista" element={<MenuView />} />
+      <Route path="/prislista" element={<MenuView />} />
       <Route path="*" element={<PosShell />} />
     </Routes>
   );
@@ -40,7 +40,7 @@ function PosShell() {
           </div>
         </div>
         <Link
-          to="/pris-lista"
+          to="/prislista"
           aria-label="Prislista"
           className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600 active:scale-90 transition-transform"
         >

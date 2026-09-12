@@ -24,7 +24,7 @@ Standalone React app. NOT part of the TumbolaGoIF monorepo: it is not an npm wor
 
 ## File layout & conventions
 
-- `src/App.tsx` — tab shell (cashier / inventory / history) + routes. `/pris-lista` is a public menu/price-list page (`MenuView`); everything else routes to the POS shell. Uses `react-router-dom` (not part of the RN/monorepo conventions).
+- `src/App.tsx` — tab shell (cashier / inventory / history) + routes. `/prislista` is a public menu/price-list page (`MenuView`); everything else routes to the POS shell. Uses `react-router-dom` (not part of the RN/monorepo conventions).
 - `src/views/*.tsx` — one file per view; all Supabase calls live in views, no data layer
 - `src/lib/supabase.ts` — the single shared client
 - `src/lib/format.ts` — all currency/date formatting uses `sv-SE` locale + SEK

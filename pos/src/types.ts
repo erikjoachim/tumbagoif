@@ -5,6 +5,7 @@ export interface Product {
   stock: number;
   category: string;
   sku: string | null;
+  show_in_menu: boolean;
   created_at: string;
   updated_at: string;
 }
