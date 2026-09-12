@@ -47,8 +47,13 @@ export function CashierView() {
   const [activeCategory, setActiveCategory] = useState('All');
 
   const displayProducts = useMemo(() => {
-    if (activeCategory === 'All') return filtered;
-    return filtered.filter((p) => p.category === activeCategory);
+    const base = activeCategory === 'All' ? filtered : filtered.filter((p) => p.category === activeCategory);
+    return [...base].sort((a, b) => {
+      const aInStock = a.stock > 0 ? 0 : 1;
+      const bInStock = b.stock > 0 ? 0 : 1;
+      if (aInStock !== bInStock) return aInStock - bInStock;
+      return a.name.localeCompare(b.name);
+    });
   }, [filtered, activeCategory]);
 
   const categoryGroups = useMemo(() => {
