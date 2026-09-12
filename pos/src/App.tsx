@@ -1,12 +1,23 @@
 import { useState } from 'react';
-import { Package, ShoppingCart, Receipt, Plus } from 'lucide-react';
+import { Package, ShoppingCart, Receipt, Plus, ExternalLink } from 'lucide-react';
+import { Link, Route, Routes } from 'react-router-dom';
 import { InventoryView } from '@/views/InventoryView';
 import { CashierView } from '@/views/CashierView';
 import { HistoryView } from '@/views/HistoryView';
+import { MenuView } from '@/views/MenuView';
 
 type Tab = 'cashier' | 'inventory' | 'history';
 
 function App() {
+  return (
+    <Routes>
+      <Route path="/pris-lista" element={<MenuView />} />
+      <Route path="*" element={<PosShell />} />
+    </Routes>
+  );
+}
+
+function PosShell() {
   const [tab, setTab] = useState<Tab>('cashier');
 
   const tabs: { id: Tab; label: string; icon: typeof Package }[] = [
@@ -28,6 +39,13 @@ function App() {
             <p className="text-[10px] text-slate-400 leading-tight">Point of Sale</p>
           </div>
         </div>
+        <Link
+          to="/pris-lista"
+          aria-label="Prislista"
+          className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600 active:scale-90 transition-transform"
+        >
+          <ExternalLink className="w-5 h-5" />
+        </Link>
       </header>
 
       {/* Content */}
